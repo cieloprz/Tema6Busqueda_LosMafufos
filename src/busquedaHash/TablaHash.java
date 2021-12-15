@@ -55,5 +55,22 @@ public class TablaHash {
         return -1;
     }
 
-    
+  static int eliminaHash(TablaHash[] h, int m, int n) {
+        int i = buscaHash(h, m, n);
+        if (i == -1) {
+            return -1;
+        } else {
+            h[i].estado = 1;
+            h[i].np=0;
+            h[i].nombre="";
+            h[i].precio=0;
+            return 1;
+        }
+    }
+    static void mostrarHash(TablaHash[]h) {
+
+         for(int i=0;i<h.length;i++){
+                System.out.println("Numero de producto: "+h[i].np+"\nNombre: "+h[i].nombre+"\tPrecio del producto: "+h[i].precio+"\n");
+            }
+    }
 }
